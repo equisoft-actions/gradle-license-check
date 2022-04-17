@@ -43,7 +43,7 @@ runs:
         properties: ${{ inputs.gradle-properties }}
 
     - name: Upload license inventory report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: "!cancelled()"
       with:
         name: License inventory report
@@ -51,7 +51,7 @@ runs:
         path: ${{ steps.context.outputs.reports-directory }}/license-inventory-report.html
 
     - name: Upload dependencies without allowed license report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: "!cancelled()"
       with:
         name: Dependencies without allowed licenses
